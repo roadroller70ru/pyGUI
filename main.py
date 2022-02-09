@@ -8,7 +8,7 @@
 #__s_userDep - отдел пользователя
 #__s_userTelN - телефонный номер пользователя
 #__s_userEmail - емайл пользователя
-#__s_userActive - признак работающего пользователя (работает, уволен, дикрет, отпуск)
+#__s_userActive - признак работающего пользователя (работает, уволен, декрет, отпуск)
 # методы
 #
 #
@@ -18,7 +18,7 @@
 class EGRUser:
 
     #первичная инициализация пользователя
-    #принемает строки - Фамилия, Имя, Отчество
+    #принимает строки - Фамилия, Имя, Отчество
     def __init__(self, f, i, o):
         self.__s_userF = f
         self.__s_userI = i
@@ -80,9 +80,9 @@ usero = str(input("Введите Отчество пользователя: "))
 testuser = EGRUser(userf, useri, usero)
 print(testuser)
 
-testuser.setUserF("Путин")
-testuser.setUserI("Владимир")
-testuser.setUserO("Владимирович")
+testuser.setUserF("Тоткого")
+testuser.setUserI("Нельзя")
+testuser.setUserO("Называть")
 
 print(testuser)
 
