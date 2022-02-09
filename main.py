@@ -78,11 +78,11 @@ useri = str(input("Введите Имя пользователя: "))
 usero = str(input("Введите Отчество пользователя: "))
 
 testuser = EGRUser(userf, useri, usero)
+print(testuser)
 
 testuser.setUserF("Путин")
 testuser.setUserI("Владимир")
 testuser.setUserO("Владимирович")
-
 
 print(testuser)
 
