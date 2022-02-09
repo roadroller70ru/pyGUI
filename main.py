@@ -83,17 +83,21 @@ class EGRUser:
         return userinfo
 
 
-print("Тестирование Класса EGRUSER")
-userf = str(input("Введите Фамилию пользователя: "))
-useri = str(input("Введите Имя пользователя: "))
-usero = str(input("Введите Отчество пользователя: "))
+def main():
+    print("Тестирование Класса EGRUSER")
+    userf = str(input("Введите Фамилию пользователя: "))
+    useri = str(input("Введите Имя пользователя: "))
+    usero = str(input("Введите Отчество пользователя: "))
 
-testuser = EGRUser(userf, useri, usero)
-print(testuser)
+    testuser = EGRUser(userf, useri, usero)
+    print(testuser)
 
-testuser.setUserF("Тоткого")
-testuser.setUserI("Нельзя")
-testuser.setUserO("Называть")
+    testuser.setUserF("Тоткого")
+    testuser.setUserI("Нельзя")
+    testuser.setUserO("Называть")
 
-print(testuser)
+    print(testuser)
 
+
+if __name__ == '__main__':
+    main()
