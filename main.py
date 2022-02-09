@@ -1,13 +1,87 @@
-#import easygui
+#Класс EGRUser описывает атрибуты пользователя системы
+#__s_userF - Фамилия пользователя, обязательный атрибут
+#__s_userI - Имя пользователя, обязательный атрибут
+#__s_userO - Отчество пользователя, обязательный атрибут
+#__s_userLogin - логин пользователя
+#__s_userPost - должность пользователя
+#__s_userDep - отдел пользователя
+#__s_userTelN - телефонный номер пользователя
+#__s_userEmail - емайл пользователя
+#__s_userActive - признак работающего пользователя (работает, уволен, дикрет, отпуск)
+#реализует методы
+#
+#
+#
+#
+#
+class EGRUser:
 
-#msg = "Choose!"
-#varints = ["one", "two", "three"]
-#title = ''
-#userch = easygui.choicebox(msg, title, varints)
-#easygui.msgbox("You pick: " + userch)
-import easygui
+    #первичная инициализация пользователя
+    #принемает строки - Фамилия, Имя, Отчество
+    def __init__(self, f, i, o):
+        self.__s_userF = f
+        self.__s_userI = i
+        self.__s_userO = o
+        self.__s_userLogin = ''
+        self.__s_userPost = ''
+        self.__s_userDep = ''
+        self.__s_userTelN = ''
+        self.__s_userEmail = ''
 
-msg = "What is your favorite flavor?"
-title = "Ice Cream Survey"
-choices = ["Vanilla", "Chocolate", "Strawberry", "Rocky Road"]
-choice = easygui.choicebox(msg, title, choices)  # choice is a string
+    #Блок Get-Set методов
+    #
+    def getUserF(self):
+        return self.__s_userF
+
+    def setUserF(self, f):
+        self.__s_userF = f
+
+    def getUserI(self):
+        return self.__s_userI
+
+    def setUserI(self, i):
+        self.__s_userI = i
+
+    def getUserO(self):
+        return self.__s_userO
+
+    def setUserO(self, o):
+        self.__s_userO = o
+
+    def getUserLogin(self):
+        return self.__s_userLogin
+    ##генерируется автоматический
+    #def setUserLogin(self):
+    #    self.__s_userLogin = genLogin(self.__s_userF, self.__s_userI, self.__s_userO, self.__s_Dep)
+
+    def getUserPost(self):
+        return self.__s_userPost
+
+    def setUserPost(self, post):
+        self.__s_userPost = post
+
+    def getUserDep(self):
+        return self.__s_userDep
+
+    def setUserDep(self, dep):
+        self.__s_userDep = dep
+
+    def __str__(self):
+        userinfo = ("ФИО: " + self.__s_userF + " " + self.__s_userI + " " + self.__s_userO)
+        return userinfo
+
+
+print("Тестирование Класса EGRUSER")
+userf = str(input("Введите Фамилию пользователя: "))
+useri = str(input("Введите Имя пользователя: "))
+usero = str(input("Введите Отчество пользователя: "))
+
+testuser = EGRUser(userf, useri, usero)
+
+testuser.setUserF("Путин")
+testuser.setUserI("Владимир")
+testuser.setUserO("Владимирович")
+
+
+print(testuser)
+
