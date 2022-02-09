@@ -8,17 +8,28 @@
 #__s_userDep - отдел пользователя
 #__s_userTelN - телефонный номер пользователя
 #__s_userEmail - емайл пользователя
-#__s_userActive - признак работающего пользователя (работает, уволен, дикрет, отпуск)
+#__s_userActive - признак работающего пользователя (работает, уволен, декрет, отпуск)
 # методы
-#
-#
-#
-#
-#
-class EGRUser:
 
-    #первичная инициализация пользователя
-    #принемает строки - Фамилия, Имя, Отчество
+
+class EGRUser:
+    '''
+    #Класс EGRUser
+        атрибуты пользователя системы
+        __s_userF - Фамилия пользователя, обязательный атрибут
+        __s_userI - Имя пользователя, обязательный атрибут
+        __s_userO - Отчество пользователя, обязательный атрибут
+        __s_userLogin - логин пользователя
+        __s_userPost - должность пользователя
+        __s_userDep - отдел пользователя
+        __s_userTelN - телефонный номер пользователя
+        __s_userEmail - емайл пользователя
+        __s_userActive - признак работающего пользователя (работает, уволен, декрет, отпуск)
+        методы
+    '''
+
+    # первичная инициализация пользователя
+    # принимает строки - Фамилия, Имя, Отчество
     def __init__(self, f, i, o):
         self.__s_userF = f
         self.__s_userI = i
@@ -72,17 +83,21 @@ class EGRUser:
         return userinfo
 
 
-print("Тестирование Класса EGRUSER")
-userf = str(input("Введите Фамилию пользователя: "))
-useri = str(input("Введите Имя пользователя: "))
-usero = str(input("Введите Отчество пользователя: "))
+def main():
+    print("Тестирование Класса EGRUSER")
+    userf = str(input("Введите Фамилию пользователя: "))
+    useri = str(input("Введите Имя пользователя: "))
+    usero = str(input("Введите Отчество пользователя: "))
 
-testuser = EGRUser(userf, useri, usero)
-print(testuser)
+    testuser = EGRUser(userf, useri, usero)
+    print(testuser)
 
-testuser.setUserF("Путин")
-testuser.setUserI("Владимир")
-testuser.setUserO("Владимирович")
+    testuser.setUserF("Тоткого")
+    testuser.setUserI("Нельзя")
+    testuser.setUserO("Называть")
 
-print(testuser)
+    print(testuser)
 
+
+if __name__ == '__main__':
+    main()
